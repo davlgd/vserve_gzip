@@ -1,0 +1,50 @@
+{
+    "shop": {
+        "id": 1,
+        "name": "Shop 1",
+        "address": "Address 1",
+        "phone": "1234567890",
+        "email": "shop@email.tld",
+        "products": [
+            {
+                "id": 1,
+                "name": "Product 1",
+                "price": 100
+            },
+            {
+                "id": 2,
+                "name": "Product 2",
+                "price": 200
+            },
+            {
+                "id": 3,
+                "name": "Product 3",
+                "price": 300
+            },
+            {
+                "id": 4,
+                "name": "Product 4",
+                "price": 400
+            },
+            {
+                "id": 5,
+                "name": "Product 5",
+                "price": 500
+            }
+        ],
+        "cart": [
+            {
+                "id": 1,
+                "quantity": 1
+            },
+            {
+                "id": 2,
+                "quantity": 2
+            },
+            {
+                "id": 3,
+                "quantity": 3
+            }
+        ]
+    }
+    }
