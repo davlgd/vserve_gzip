@@ -1,9 +1,9 @@
 module main
 
-import time
 import x.vweb
-import v.util
+import time
 import net.http
+import os 
 
 pub struct Context {
 	vweb.Context
@@ -25,16 +25,16 @@ pub fn (app &App) wildcard(mut ctx Context, path string) vweb.Result {
 
 	ctx.set_header(.server, 'Tiniest_vWeb_Server')
 	
-	not_found := util.read_file('dist/404.html') or {
+	not_found := os.read_file('dist/404.html') or {
 		ctx.res.status_code = 500
 		return ctx.text('Internal server error')
 	}
 
-	data := util.read_file('dist' + file_path) or {
+	data := os.read_file('dist' + file_path) or {
 		ctx.res.status_code = 404
 		return ctx.html(not_found)
 	}
-
+	
 	ctx.res.header.add(http.CommonHeader.cache_control, 'public, max-age=3600')
 
 	ctx.res.header.add(.expires, time.utc()
